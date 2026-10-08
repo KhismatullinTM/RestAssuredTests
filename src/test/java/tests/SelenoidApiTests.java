@@ -63,7 +63,8 @@ public class SelenoidApiTests extends TestBaseApi {
                 .get("/wd/hub/status")
                 .then()
                 .log().all()
-                .statusCode(401);
+                .statusCode(401)
+                .body(containsString("401 Authorization Required"));
     }
 
     @Test
@@ -76,7 +77,8 @@ public class SelenoidApiTests extends TestBaseApi {
                 .get("/wd/hub/status")
                 .then()
                 .log().all()
-                .statusCode(401);
+                .statusCode(401)
+                .body(containsString("401 Authorization Required"));
     }
 
     @Test
